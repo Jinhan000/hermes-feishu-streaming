@@ -1,7 +1,8 @@
 # Feishu Card Kit Streaming: 飞书逐字流式输出
 
 > 在 Hermes Agent 的飞书消息中实现类似 ChatGPT 的逐字显示效果。
-> **非官方功能**——通过 Card Kit API 的 `streaming_mode` 特性实现，代码修改自 feishu.py。
+> **非官方功能**——通过 Card Kit API 的 `streaming_mode` 特性实现。
+> 灵感与实现参考自 [OpenClaw](https://github.com/NousResearch/hermes-agent) 社区的飞书插件及流式卡片方案。
 
 ---
 
@@ -173,3 +174,11 @@ bash ~/.hermes/scripts/feishu-streaming-setup.sh status
 | `FeishuAdapter._update_streaming_card()` | 更新 card 元素的增量逻辑 |
 | `FeishuAdapter._close_streaming_card()` | 关闭 streaming_mode 转为静态卡片 |
 | `gateway/config.py` | 新增 `feishu: streaming: true` → `FEISHU_STREAMING` env var 桥接 |
+
+---
+
+## 致谢
+
+- 感谢 [OpenClaw](https://github.com/NousResearch/hermes-agent) 社区提供的飞书插件实现与 Card Kit 流式卡片方案，本功能的设计与实现深受其启发。
+- 感谢 [Hermes Agent](https://github.com/NousResearch/hermes-agent) 团队的优秀框架。
+- 感谢飞书 Card Kit API 提供的 streaming_mode 能力。
