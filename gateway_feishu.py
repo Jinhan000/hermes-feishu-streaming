@@ -4948,7 +4948,7 @@ class FeishuAdapter(BasePlatformAdapter):
                     "print_frequency_ms": {"default": 80},
                     "print_step": {"default": 2},
                 },
-                "summary": {"content": "Match 正在回复..."},
+                "summary": {"content": content[:50] or "正在回复..."},
             },
             "body": {"elements": [{"tag": "markdown", "content": content, "element_id": "content"}]},
         }, ensure_ascii=False)
